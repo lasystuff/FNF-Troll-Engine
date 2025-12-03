@@ -62,9 +62,6 @@
 	<!--Remove if you don't want to use Moonchart, which allows usage of chart formats from other rhythm games and fnf engines-->
 	<define name="USING_MOONCHART" if="native MODS_ALLOWED" />
 
-	<!--If you're using git, set this, because Haxe sucks fuck and cant detect if youre on git or 0.4.0 for some fucking reason welcome to haxe ladies and gentlemen-->
-	<!-- <define name="USING_NEW_MOONCHART" /> -->
-
 	<!--Remove if you dont want the engine to autoupdate -->
 	<define name="DO_AUTO_UPDATE" if="native desktop OFFICIAL_BUILD" unless="debug" />
 
@@ -119,11 +116,7 @@
 		<haxelib name="flixel-animate" version="1.3.1"/>
 	</section>
 
-	<section if="USING_MOONCHART">
-		<haxelib name="moonchart" version="0.5.0" unless="USING_NEW_MOONCHART"/>
-		<haxelib name="moonchart" version="git" if="USING_NEW_MOONCHART"/>
-		<classpath path="haxelibMoonchartShadow" unless="USING_NEW_MOONCHART"/>
-	</section>
+	<haxelib name="moonchart" version="git" if="USING_MOONCHART"/>
 
 	<haxelib name="hxdiscord_rpc" if="DISCORD_ALLOWED"/>
 	<haxelib name="hxvlc" if="VIDEOS_ALLOWED"/> <!--You can replace with hxcodec if you're stubborn and dont wanna use newer and better libs-->
